@@ -19,12 +19,12 @@ export class CategoriesComponent implements OnInit{
 
   
   ngOnInit(): void {
-    this._ActivatedRoute.params.subscribe((data)=>{
-
-      this.getSupCategory(data['id'])
-      this.getCategoryProducts(data['id'])
-      
-    })
+    
+   this._ActivatedRoute.paramMap.subscribe(params => {
+   this.getSupCategory(params.get('id')!);
+   this.getCategoryProducts(params.get('id')!);
+   
+  });
    
   }
   getSupCategory(categoryId:string){

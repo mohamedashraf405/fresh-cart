@@ -20,10 +20,12 @@ export class BrandsComponent implements OnInit {
   productList:WritableSignal<Product[]>=signal<Product[]>([]);
 
   ngOnInit(): void {
-    this._ActivatedRoute.params.subscribe((data)=>{
-      this.getSupBrand(data['id'])
-      this.getBrandProduct(data['id'])
-    })
+    
+      this._ActivatedRoute.paramMap.subscribe(params => {
+    this.getSupBrand(params.get('id')!);
+    this.getBrandProduct(params.get('id')!);
+   
+  });
     
   }
     

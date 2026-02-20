@@ -21,10 +21,10 @@ export class ProductdetailsComponent implements OnInit {
   product:WritableSignal<Product>=signal<Product>({} as Product)
    
  ngOnInit(): void {
-  this._ActivatedRoute.params.subscribe((data)=>{
-    this.getSpecificProduct(data['id'])
-    
-  })
+    this._ActivatedRoute.paramMap.subscribe(params => {
+    this.getSpecificProduct(params.get('id')!);
+   
+  });
     this.flowbiteService.loadFlowbite((flowbite) => {
         initFlowbite();
       });
