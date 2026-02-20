@@ -15,19 +15,18 @@ import { AllordersComponent } from './features/components/allorders/allorders.co
 import { WishlistComponent } from './features/components/wishlist/wishlist.component';
 
 export const routes: Routes = [
-    { path:'',redirectTo:'home',pathMatch:'full' },
-    { path:'home',component:HomeComponent,title:'home' },
-    { path:'cart',canActivate:[authGuard],component:CartComponent,title:'cart' },
-    { path:'products',component:ProductsComponent,title:'products' },
-    { path:'allorders',component:AllordersComponent,title:'allorders' },
-    { path:'wishlist',component:WishlistComponent,title:'wishlist' },
-    { path:'shippingaddress/:id',component:ShippingaddressComponent,title:'shippingaddress', data:{ renderMode:'client' } },
-    { path:'productdetails/:id',component:ProductdetailsComponent,title:'productdetails', data:{ renderMode:'client' } },
-    { path:'brands/:id',component:BrandsComponent,title:'brands', data:{ renderMode:'client' } },
-    { path:'categories/:id',component:CategoriesComponent,title:'categories', data:{ renderMode:'client' } },
-    { path:'register',component:RegisterComponent,title:'register' },
-    { path:'login',component:LoginComponent,title:'login' },
-    { path:'forgetpassword',component:ForgetpasswordComponent,title:'forgetpassword' },
-    { path:'**',component:NotfoundComponent,title:'notfound' },
+    {path:'',redirectTo:'home',pathMatch:'full'},
+    {path:'home',component:HomeComponent,title:'home'},
+    {path:'cart',canActivate:[authGuard],component:CartComponent,title:'cart'},
+    {path:'products',component:ProductsComponent,title:'products'},
+    {path:'allorders',component:AllordersComponent,title:'allorders'},
+    {path:'wishlist',component:WishlistComponent,title:'wishlist'},
+    {path:'shippingaddress/:id',component:ShippingaddressComponent,title:'shippingaddress'},
+    {path:'productdetails/:id',component:ProductdetailsComponent,title:'productdetails'},
+    {path:'brands/:id',component:BrandsComponent,title:'brands'},
+    {path:'categories/:id',component:CategoriesComponent,title:'categories'},
+    {path:'register',component:RegisterComponent,title:'register'},
+    {path:'login',component:LoginComponent,title:'login'},
+    {path:'forgetpassword',component:ForgetpasswordComponent,title:'forgetpassword'},
+    {path:'**',component:NotfoundComponent,title:'notfound'},
 ];
-
