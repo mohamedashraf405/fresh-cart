@@ -1,0 +1,69 @@
+<div class="w-2/4 mx-auto my-8">
+    <h1 class="mb-6 ms-1 text-4xl text-green-600">{{"All Orders"|translate}} :</h1>
+  @for(order of orderList(); track order._id){
+    <div class="border rounded-lg shadow-md p-4 bg-white mb-3">
+      
+      
+      <div class="flex justify-between items-center mb-3">
+        <div>
+          <span class="block text-sm text-gray-500">ORDER PLACED</span>
+          <span class="block font-medium">{{ order.createdAt}}</span>
+        </div>
+        <div class="text-right">
+          <span class="block text-sm text-gray-500">TOTAL</span>
+          <span class="block font-medium">EGP {{ order.totalOrderPrice }}</span>
+        </div>
+      </div>
+
+  
+      <div class="text-sm text-gray-600 mb-3">
+        ORDER # {{ order._id }}
+      </div>
+
+      
+     <div class="flex flex-row justify-between">
+         <div class="mb-3">
+        <h4 class="font-semibold mb-1">Order Details:</h4>
+        <p class="text-gray-600">
+          {{ order.user.name }}<br>
+          {{ order.shippingAddress.phone }}<br>
+          {{ order.shippingAddress.details }}, {{ order.shippingAddress.city }}
+        </p>
+      </div>
+
+      <div class="">
+        <span class="bg-green-600 text-white px-3 py-1 rounded-full text-sm me-2">
+          {{ order.paymentMethodType  }}
+        </span>
+        @if(order.isPaid){
+          <span class="bg-green-600 text-white px-3 py-1 rounded-full text-sm me-2">Paid</span>}
+        @else{
+          <span class="bg-gray-300 text-gray-700 px-3 py-1 rounded-full text-sm me-2">Not Paid</span>}
+        
+        @if(order.isDelivered){
+          <span class="bg-green-600 text-white px-3 py-1 rounded-full text-sm me-2">Delivered</span>
+        }@else{
+          <span class="bg-gray-300 text-gray-700 px-3 py-1 rounded-full text-sm me-2">In Way</span>
+        }
+      </div>
+     </div>
+
+      
+      <h4 class="font-semibold mb-2">
+        Products: <span class="text-sm font-normal">{{ order.cartItems.length }}</span>
+      </h4>
+      <div class="flex flex-row flex-wrap ">
+        @for(item of order.cartItems; track item._id){
+          <div class="flex items-center gap-3  m-2 pb-2" >
+            <img class="w-16 h-16 object-cover rounded" [src]=" item.product.imageCover " [alt]=" item.product.title ">
+            <div class="flex flex-col">
+              <span  class="font-medium cursor-pointer hover:text-green-600" [routerLink]="['/productdetails',item.product._id]">{{ item.product.title }}</span>
+              <span class="text-sm text-gray-600">{{ item.count }} x EGP {{ item.price }}</span>
+            </div>
+          </div>
+        }
+      </div>
+
+    </div>
+  }
+</div>

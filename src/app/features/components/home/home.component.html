@@ -1,0 +1,15 @@
+
+<app-homeslider></app-homeslider>
+<app-categoryslider></app-categoryslider>
+<app-brandslider></app-brandslider>
+
+<!-- //////////////////////////////////////////////////////////////////////////////////////////// -->
+ <div class="grid lg:grid-cols-6 md:grid-cols-3 w-full gap-4">
+    
+    @for(item of productList(); track $index){
+        <app-productcard [product]="item" ></app-productcard>
+    }
+
+
+
+ </div>

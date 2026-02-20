@@ -1,0 +1,40 @@
+@if(resetCodeFlag){
+  <section class="w-3/4 mx-auto">
+<h1 class="text-green-600 text-3xl font-medium my-5">{{"Reset Password "|translate}} :</h1>
+@if(errMsg()){
+  <div class="p-4 mb-4 text-sm text-fg-danger-strong rounded-base bg-danger-soft" role="alert">
+  {{errMsg()}}
+</div>
+}
+<form  [formGroup]="resetCodeForm" (ngSubmit)="submitResetCodeForm()">
+     <div class="mb-5">
+         <label for="resetCode" class="block mb-2.5 text-lg font-medium text-heading">{{"Reset Code"|translate}} :</label>
+      <input
+        formControlName="resetCode"
+        type="text"
+        id="resetCode"
+        class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-green-600 focus:border-green-600 block w-full px-3 py-2.5 shadow-xs placeholder:text-body"
+      />
+      @if(resetCodeForm.get('resetCode')?.errors && resetCodeForm.get('resetCode')?.touched){
+         <div class="p-2 mb-4 text-sm text-fg-danger-strong rounded-base bg-danger-soft" role="alert">
+        @if(resetCodeForm.get('resetCode')?.errors?.['required']){
+          <p>{{"Reset code is required"|translate}}</p>
+        }@else if(resetCodeForm.get('resetCode')?.errors?.['pattern']){
+          <p>{{"Reset code must contain at least 4 digits and numbers only"|translate}}</p>
+        }
+      </div>
+      }
+     </div>
+     <button [disabled]="resetCodeForm.invalid" class="btn-main  block ms-auto">
+      @if(isLoading()){
+        <span><i class="fa-solid fa-spinner fa-spin"></i></span>
+      }@else{
+        <span>{{"Send"|translate}}</span>
+      }
+    </button>
+</form>
+</section>
+}
+@if(resetNewPasswordFlag){
+  <app-resetnewpassword></app-resetnewpassword>
+}

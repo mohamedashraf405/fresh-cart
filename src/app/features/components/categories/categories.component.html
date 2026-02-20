@@ -1,0 +1,17 @@
+<div class="w-80  mx-auto mt-8 border-2 p-2">
+    <img [src]="Category().image" class="w-100" alt="">
+    <h1 class="text-center  text-2xl">{{Category().name}}</h1>
+</div>
+<app-categoryslider></app-categoryslider>
+@if(productList().length > 0){
+       <div class="mt-10 mb-10 grid  lg:grid-cols-6 md:grid-cols-3 w-full gap-4">
+ @for(item of productList(); track $index){
+        <app-productcard [product]="item" ></app-productcard>
+    }
+</div>
+   }@else{
+    <div class="w-full mt-10 mx-auto">
+        <img src="/images/NoProducts.b4f9f24eddeb2c654e745972b4ac7d83.svg"  class="w-150 mx-auto">
+    </div>
+   } 
+   

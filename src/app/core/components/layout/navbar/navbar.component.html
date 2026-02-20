@@ -1,0 +1,76 @@
+
+
+<nav class="bg-gray-100 fixed w-full z-100 top-0 start-0 border-b border-default">
+  <div class="max-w-screen-xl flex flex-wrap  items-center md:w-10/12 justify-between mx-auto p-4">
+  <a routerLink="home" class="flex items-center space-x-3 rtl:space-x-reverse">
+      <img src="images/freshcart-logo.svg" class="h-6 sm:h-7" alt="Fresh cart Logo" />
+    
+  </a>
+  <div class="flex md:order-2 space-x-0 md:space-x-0 rtl:space-x-reverse">
+    <ul class="flex items-center gap-x-1">
+     <li>
+        <button (click)="_MyTranslateService.changeLang('ar')"  class="block py-2 px-1 text-black rounded  cursor-pointer "  >{{"AR"|translate}}</button>
+      </li>
+       <li>
+        <button (click)="_MyTranslateService.changeLang('en')"   class="block py-2 px-1 text-black rounded cursor-pointer  "  >{{"EN"|translate}}</button>
+      </li>
+      @if(isLogIn){
+       
+         <li class="me-2">
+          
+<button type="button" routerLink="wishlist" class="relative text-white    font-medium">
+          <i class="fa-solid text-xl sm:text-4xl pe-2 text-red-600 fa-heart hover:text-red-700"></i>
+  <span class="sr-only">Notifications</span>
+<div class="absolute inline-flex items-center justify-center  w-4 h-4 sm:w-6 sm:h-6 text-xs font-bold text-white bg-danger border-2 border-buffer rounded-full -top-2 -end-2" >{{wishlistItems()}}</div>
+</button>
+
+        </li>
+        <li class="sm:me-2">
+          
+<button type="button" routerLink="cart" class="relative text-white bg-green-600 box-border border border-transparent hover:bg-green-700 focus:ring-4 focus:ring-green-100 shadow-xs font-medium leading-5 rounded-base text-sm p-1 sm:p-3 focus:outline-none">
+ <i class="fas fa-cart-shopping sm:text-xl"></i>
+  <span class="sr-only">Notifications</span>
+<div class="absolute inline-flex items-center justify-center w-4 h-4 sm:w-6 sm:h-6 text-xs font-bold text-white bg-danger border-2 border-buffer rounded-full -top-2 -end-2" >{{cartItems()}}</div>
+</button>
+
+        </li>
+
+       <li (click)="_AuthService.logOut()">
+        <a  class="block cursor-pointer py-2 sm:px-3 text-black rounded md:bg-transparent  md:p-0" aria-current="page">{{"Logout"|translate}}</a>
+      </li>
+      }@else{
+         <li>
+        <a  class="block py-2 px-3 text-black rounded md:bg-transparent  md:p-0" aria-current="page" routerLink="register"routerLinkActive="text-green-600">{{"Register"|translate}}</a>
+      </li>
+      <li>
+        <a  class="block py-2 px-3 text-black rounded md:bg-transparent  md:p-0" aria-current="page" routerLink="login"routerLinkActive="text-green-600">{{"Login"|translate}}</a>
+      </li>
+      }
+     
+    </ul>
+      <button data-collapse-toggle="navbar-cta" type="button" class="inline-flex items-center p-2 w-9 h-9 justify-center text-sm text-body rounded-base md:hidden hover:bg-neutral-secondary-soft hover:text-heading focus:outline-none focus:ring-2 focus:ring-neutral-tertiary" aria-controls="navbar-cta" aria-expanded="false">
+        <span class="sr-only">Open main menu</span>
+        <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M5 7h14M5 12h14M5 17h14"/></svg>
+    </button>
+  </div>
+  <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-cta">
+    <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-default rounded-base bg-gray-100 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 ">
+      <li>
+        <a  class="block py-2 px-1 text-black rounded   " aria-current="page" routerLink="home" routerLinkActive="bg-green-600 text-white rounded px-3 " >{{"Home"|translate}}</a>
+      </li>    
+      <li>
+        <a  class="block py-2 px-1 text-black rounded   " aria-current="page" routerLink="products" routerLinkActive="bg-green-600 text-white rounded px-3 ">{{"Products"|translate}}</a>
+      </li>
+      <li>
+        <a  class="block py-2 px-1 text-black rounded   " aria-current="page" routerLink="allorders" routerLinkActive="bg-green-600 text-white rounded px-3 ">{{"Orders"|translate}}</a>
+      </li>
+     
+     
+    </ul>
+  </div>
+  </div>
+  
+
+
+</nav>
+

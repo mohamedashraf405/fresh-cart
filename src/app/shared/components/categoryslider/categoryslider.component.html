@@ -1,0 +1,18 @@
+<section class="my-5">
+    <h1 class="text-green-600 text-lg mb-3"> {{"Show Popular Categories"|translate}}:</h1>
+      
+  <owl-carousel-o [options]="customOptions">
+
+    @for (slide of categoryList(); track slide._id) {
+      <ng-template carouselSlide [id]="slide._id" >
+<div class="overflow-hidden hover:border-b-5 border-green-600">
+        <img [src]="slide.image" [alt]="slide.name" [routerLink]="['/categories',slide._id]" class="h-[250px] object-cover duration-500 hover:scale-105 " [title]="slide.name" (click)="getSupCategory(slide._id)">
+
+</div>        <h3 class="text-center">{{slide.name}}</h3>
+      </ng-template>
+      
+    }
+
+  </owl-carousel-o>
+  
+</section>

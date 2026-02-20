@@ -1,0 +1,22 @@
+@use 'ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+@use 'ngx-owl-carousel-o/lib/styles/scss/owl.theme.default' as owl-theme;
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import "flowbite/src/themes/default";
+@plugin "flowbite/plugin";
+@source "../node_modules/flowbite";
+
+.btn-main{
+    @apply bg-green-600 text-white rounded-xl border hover:bg-white hover:text-green-600 hover:border-green-600  px-4 py-2 
+}
+.owl-theme .owl-carousel-inner .owl-prev, .owl-theme .owl-carousel-inner .owl-next {
+
+    background: oklch(62.7% 0.194 149.214);
+ 
+}
+.owl-theme .owl-carousel-inner .owl-prev:hover, .owl-theme .owl-carousel-inner .owl-next:hover {
+    background: oklch(52.7% 0.154 150.069);
+
+}
+
+

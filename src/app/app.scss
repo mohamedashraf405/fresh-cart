@@ -1,0 +1,18 @@
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner {
+  width: 50px;           /* حجم الدائرة */
+  height: 50px;
+  border: 4px solid green;   /* لون الإطار */
+  border-top: 4px solid transparent; /* الطرف الشفاف لعمل الحركة */
+  border-radius: 50%;         /* دائري الشكل */
+  animation: App-logo-spin 1s linear infinite; /* تطبيق الأنيميشن */
+  z-index: 50;
+}

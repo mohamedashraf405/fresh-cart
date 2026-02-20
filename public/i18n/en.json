@@ -1,0 +1,93 @@
+{
+    
+        "Home":"Home",
+        "Cart":"Cart",
+        "Products":"Products",
+        "Categories":"Categories",
+        "Brands":"Brands",
+        "Logout":"Logout",
+        "Login":"Login",
+        "Register":"Register",
+        "Orders":"Orders",
+        "AR":"AR",
+        "EN":"EN",
+         "Show Popular Categories": "Show Popular Categories",
+         "Show Popular Brands": "Show Popular Brands",
+         "Add to cart": "Add to cart",
+         "All Products": "All Products",
+         "Sort by": "Sort by",
+         "Best Seller": "Best Seller",
+         "Highest Rating": "Highest Rating",
+         "Lowest Rating": "Lowest Rating",
+         "Highest Price": "Highest Price",
+         "Lowest Price": "Lowest Price",
+         "Select Option": "Select Option",
+         "Search": "Search",
+         "Previous": "Previous",
+         "Next": "Next",
+         "All Orders": "All Orders",
+         "Wish List": "Wish List",
+         "Order": "Order",
+         "Total Cart Price": "Total Cart Price",
+         "Clear All": "Clear All",
+         "Shop Cart": "Shop Cart",
+         "Price": "Price",
+         "Shipping Address": "Shipping Address",
+         "Credit Card": "Credit Card",
+         "Phone": "Phone",
+         "Details": "Details",
+         "Cash": "Cash",
+         "City": "City",
+         "Forget password": "Forget password",
+         "password": "password",
+         "email": "email",
+         "LogIn Now": "LogIn Now",
+         "LogIn": "LogIn",
+         "rePassword": "rePassword",
+         "Registser Now": "Registser Now",
+         "name": "name",
+         "Send": "Send",
+         "Reset Password": "Reset Password",
+         "Reset Code": "Reset Code",
+         "New password": "New password",
+         "Get The FreshCart App": "Get The FreshCart App",
+         "we will send you a link,open it in your phone to download the app": "we will send you a link,open it in your phone to download the app",
+         "Share App Link": "Share App Link",
+         "Payment partners": "Payment partners",
+         "Get Deliveries with FreshCart": "Get Deliveries with FreshCart",
+  "Name is required": "Name is required",
+  "Name must be at least 3 characters": "Name must be at least 3 characters",
+  "Name must not exceed 20 characters": "Name must not exceed 20 characters",
+
+  "Email is required": "Email is required",
+  "Please enter a valid email address (example@email.com)": "Please enter a valid email address (example@email.com)",
+
+  "Password is required": "Password is required",
+  "City is required": "City is required",
+  "Details is required": "Details is required",
+  "Password must start with a capital letter, be 8–21 characters long, and contain only letters and numbers": "Password must start with a capital letter, be 8–21 characters long, and contain only letters and numbers",
+
+  "Confirm password is required": "Confirm password is required",
+  "Passwords do not match": "Passwords do not match",
+
+  "Phone number is required": "Phone number is required",
+  "Phone number must start with 010, 011, 012, or 015 and be exactly 11 digits": "Phone number must start with 010, 011, 012, or 015 and be exactly 11 digits",
+  "Reset code is required": "Reset code is required",
+  "Reset code must contain at least 4 digits and numbers only": "Reset code must contain at least 4 digits and numbers only",
+  "Youtube": "Youtube",
+  "Linkedin": "Linkedin",
+  "Tiktok": "Tiktok",
+  "Twitter": "Twitter",
+  "Instagram": "Instagram",
+  "Facebook": "Facebook"
+
+
+
+
+
+         
+
+
+              
+       
+}

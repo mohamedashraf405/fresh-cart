@@ -1,0 +1,20 @@
+<section class="mt-12 flex flex-wrap">
+  <div class="md:w-3/4 w-full">
+    <owl-carousel-o [options]="customOptions">
+      <ng-template carouselSlide>
+        <img src="images/slider-image-1.jpeg" class="w-full h-[450px] object-cover">
+      </ng-template>
+      <ng-template carouselSlide>
+        <img src="images/slider-image-2.jpeg" class="w-full h-[450px] object-cover">
+      </ng-template>
+      <ng-template carouselSlide>
+        <img src="images/slider-image-3.jpeg" class="w-full h-[450px] object-cover">
+      </ng-template>
+    </owl-carousel-o>
+  </div>
+
+  <div class="md:w-1/4 w-full hidden md:flex flex-col  ">
+    <img src="images/slider-image-1.jpeg" class="w-full h-[225px] object-cover">
+    <img src="images/slider-image-2.jpeg" class="w-full h-[225px] object-cover">
+  </div>
+</section>

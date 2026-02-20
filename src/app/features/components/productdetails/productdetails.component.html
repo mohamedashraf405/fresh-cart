@@ -1,0 +1,116 @@
+<section
+  class="mt-10 mb-16 w-11/12 lg:w-9/12 mx-auto bg-white
+         border-2 border-green-600 rounded-2xl shadow-sm
+         hover:shadow-lg transition-all duration-300
+         flex flex-col lg:flex-row gap-10 p-6">
+
+  <!-- ========== IMAGE SIDE ========== -->
+  <div class="lg:w-1/2 w-full">
+
+    <div id="indicators-carousel"
+         class="relative bg-gray-50 rounded-xl p-6"
+         data-carousel="static">
+
+      <!-- Main Image -->
+      <div class="relative h-72 md:h-96 overflow-hidden rounded-xl">
+
+        <!-- Cover -->
+        <div data-carousel-item="active">
+          <img
+            [src]="product().imageCover"
+            class="absolute inset-0 w-full h-full object-contain transition duration-500 hover:scale-105"
+            alt="">
+        </div>
+
+        <!-- Other Images -->
+        @for (item of product().images; track $index; let i = $index) {
+          <div class="hidden" data-carousel-item>
+            <img
+              [src]="item"
+              class="absolute inset-0 w-full h-full object-contain transition duration-500 hover:scale-105"
+              alt="">
+          </div>
+        }
+
+      </div>
+
+      <!-- Thumbnails -->
+      <div class="flex justify-center gap-3 mt-6">
+
+        <button data-carousel-slide-to="0"
+                class="border rounded-lg p-1 border-green-200 focus:border-green-600 hover:border-green-600 transition">
+          <img class="w-14 h-14 object-cover rounded-md"
+               [src]="product().imageCover">
+        </button>
+
+        @for (item of product().images; track $index; let i = $index) {
+          <button
+            [attr.data-carousel-slide-to]="i + 1"
+            class="border rounded-lg p-1 border-green-200 focus:border-green-600 hover:border-green-600  transition">
+            <img class="w-14 h-14 object-cover rounded-md"
+                 [src]="item">
+          </button>
+        }
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- ========== INFO SIDE ========== -->
+  <div class="lg:w-1/2 w-full flex flex-col justify-center">
+
+    <div>
+
+      <span class="text-md font-semibold text-green-600 uppercase tracking-wide">
+        {{ product().category.name }}
+      </span>
+
+      <h2 class="mt-2 text-2xl font-bold text-gray-800 leading-snug">
+        {{ product().title }}
+      </h2>
+
+      <p class="mt-4 text-gray-600 leading-relaxed text-lg">
+        {{ product().description }}
+      </p>
+
+    </div>
+
+    <!-- Price + Button -->
+    <div class="mt-8">
+
+      <div class="text-3xl flex justify-between font-bold text-gray-900 mb-6">
+        {{ product().price }} EGP
+        <div class="flex items-center gap-2 mt-3">
+        <div class="flex text-yellow-500 text-md">
+          <i class="fas fa-star"></i>
+        </div>
+        <span class="text-md text-gray-600">
+          {{ product().ratingsAverage }}
+        </span>
+      </div>
+      </div>
+
+      <div class=" flex ">
+   <button
+        (click)="addProductToCart(product()._id)"
+        class="w-10/12 bg-green-600 hover:bg-green-700
+               text-white py-3 rounded-xl font-semibold
+               shadow-md hover:shadow-lg
+               transition-all duration-300">
+        + Add To Cart
+      </button>
+      <span  (click)="toggleWishlist(product()._id)"  class="bg-red-500 ms-2 text-lg   w-15 hover:bg-red-700
+               text-white py-3 px-2 rounded-xl font-semibold
+               shadow-md hover:shadow-lg
+               transition-all duration-300">+<i class="fa-regular text-white fa-heart"></i>
+      </span>
+      </div>
+   
+
+    </div>
+
+  </div>
+
+</section>
