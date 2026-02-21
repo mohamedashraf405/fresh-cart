@@ -49,6 +49,7 @@ export class ShippingaddressComponent {
           this._OrderService.checkOut(data['id'],this.shippingAddressForm.value).subscribe({
             next:res=>{
               window.open(res.session.url,'_self')
+              
             }
           })
         }
