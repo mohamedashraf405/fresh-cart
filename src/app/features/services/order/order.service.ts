@@ -18,7 +18,7 @@ export class OrderService {
   }
  
   checkOut(cartId:string,data:shippingAddressData):Observable<any>{
-    return this._HttpClient.post(`${enviroment.baseUrl}/api/v1/orders/checkout-session/${cartId}?url=${enviroment.domain}`,{
+    return this._HttpClient.post(`${enviroment.baseUrl}/api/v1/orders/checkout-session/${cartId}?url=${enviroment.domain}#/`,{
       shippingAddress :data
     })
   }
