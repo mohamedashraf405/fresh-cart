@@ -1,5 +1,5 @@
 import { ApplicationConfig, importProvidersFrom, provideBrowserGlobalErrorListeners } from '@angular/core';
-import { provideRouter } from '@angular/router';
+import { provideRouter, withHashLocation } from '@angular/router';
 
 import { routes } from './app.routes';
 import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
@@ -16,7 +16,7 @@ import { spinnerInterceptor } from './core/interceptors/spinner/spinner-intercep
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
-    provideRouter(routes), provideClientHydration(withEventReplay()),
+    provideRouter(routes,withHashLocation()), provideClientHydration(withEventReplay()),
     provideHttpClient(withFetch(),withInterceptors([setheaderInterceptor,errorInterceptor,spinnerInterceptor])),
     provideTranslateService({
       lang: 'en',
